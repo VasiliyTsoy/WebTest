@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WebTest {
@@ -18,7 +19,9 @@ public class WebTest {
 
             driver.get("http://www.99-bottles-of-beer.net/");
 
-            String 
+            String  actualResult = driver.getCurrentUrl();
+
+            Assert.assertEquals(actualResult,expectedResult);
 
             driver.close();
             driver.quit();
